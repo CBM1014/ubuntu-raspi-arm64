@@ -1,6 +1,6 @@
 Hey! Read me! Here!
 ---
-This project is not complete yet, please **do not run any script in the project** before this sentence being removed.
+This project is not complete yet, please **do not run any script in the project** before this paragraph being removed.
 You can star this repo in order to let me know that there is a persion still look forward to this project, it will make me working harder on it <3
 
 # ubuntu-raspi-arm64
