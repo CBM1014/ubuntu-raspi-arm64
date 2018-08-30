@@ -8,7 +8,7 @@ It will makes you upset or full with unhappy. Don't do that.
 
 **If you want to run these scripts, please fix the null value on the top of these scripts.**
 
-dependance.sh
+dependencies.sh
 ---
 This script will install some packages on your host system, for the purpose of make the build process going on smoothly.
 
