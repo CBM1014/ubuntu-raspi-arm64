@@ -1,3 +1,8 @@
+if test -z "$whereisme"
+then
+  echo "Found null path value. please fix the path value before you run this script. See ./README.md and ./scripts/readme.md for more infomation."
+  exit 1
+fi
 echo "Building linux kernel...It may takes a long time, but shouter than clone git repos. Have a cup of coffee~"
 cd $whereisme/works/linux
 make ARCH=arm64 CROSS_COMPILE=aarch64-linux-gnu- bcmrpi3_defconfig

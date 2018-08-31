@@ -1,3 +1,8 @@
+if test -z "$whereisme"
+then
+  echo "Found null path value. please fix the path value before you run this script. See ./README.md and ./scripts/readme.md for more infomation."
+  exit 1
+fi
 echo "Installing qemu, debootstrap and gcc..."
 apt-get install debootstrap qemu qemu-user-static bc build-essential make gcc g++ gcc-aarch64-linux-gnu git
 echo "Clonging linux kernal source code and firmwares...It may takes a long time. Have a rest <3"

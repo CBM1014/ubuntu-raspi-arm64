@@ -4,9 +4,9 @@ This project is not complete yet, please **do not run any script in the project*
 You can star this repo in order to let me know that there is a persion still look forward to this project, it will make me working harder on it <3
 
 # ubuntu-raspi-arm64
-It's a project which helps you to build Ubuntu18.04 for raspberrypi 3b+.
+It's a project which helps you to build Ubuntu 18.04 for raspberrypi 3b+.
 
-Notice: only raspberrypi 3b+ can use arm64 system. Don't build this system for older raspberrypi, it will spoil your time.
+Notice: only raspberrypi 3b or newer version can use arm64 system. Don't build this system for older raspberrypi, it will spoil your time.
 
 Introduction
 ---
@@ -15,7 +15,7 @@ Introduction
 
 You can build your own raspberrypi system with this script.
 
-This raspi system based on **Ubuntu18.04**.
+This raspi system based on **Ubuntu 18.04**.
 
 Default configurations:
 ---

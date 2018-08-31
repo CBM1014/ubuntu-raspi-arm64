@@ -1,9 +1,14 @@
+if test -z "$whereisme"
+then
+  echo "Found null path value. please fix the path value before you run this script. See ./README.md and ./scripts/readme.md for more infomation."
+  exit 1
+fi
 echo "Building rootfs(root floder)..."
 rm -rf rootfs
 qemu-debootstrap --arch arm64 bionic rootfs $mirrorsite
 touch $whereisme/rootfs/etc/resolv.conf
 cat /etc/resolv.conf >> $whereisme/rootfs/etc/resolv.conf
-$whereisme/rootfs/etc/apt/sources.list
+touch $whereisme/rootfs/etc/apt/sources.list
 cat  $whereisme/resources/sources.list >> $whereisme/rootfs/etc/apt/sources.list
 chroot $whereisme/rootfs apt-get update
 chroot $whereisme/rootfs apt-get install bash-completion resolvconf net-tools ethtool wireless-tools 

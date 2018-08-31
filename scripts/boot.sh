@@ -1,3 +1,8 @@
+if test -z "$whereisme"
+then
+  echo "Found null path value. please fix the path value before you run this script. See ./README.md and ./scripts/readme.md for more infomation."
+  exit 1
+fi
 "Building boot partition... It's a important part of the system. It will be completed quickly."
 rm -rf $whereisme/boot
 mkdir $whereisme/boot
