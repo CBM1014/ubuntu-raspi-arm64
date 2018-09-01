@@ -1,6 +1,6 @@
 if test -z "$whereisme"
 then
-  echo "Found null path value. please fix the path value before you run this script. See ./README.md and ./scripts/readme.md for more infomation."
+  echo "Found null path value. please fix the path value before running this script. See ./README.md and ./scripts/readme.md for more infomation."
   exit 1
 fi
 echo "Building linux kernel...It may takes a long time, but shouter than clone git repos. Have a cup of coffee~"

@@ -1,0 +1,1 @@
+rootfstype=ext4 init=/root/init_resize.sh
