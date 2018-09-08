@@ -17,6 +17,8 @@ You can build your own raspberrypi system with this script.
 
 This raspi system based on **Ubuntu 18.04**.
 
+you can get all details about these scripts in ./scripts/readme.md
+
 Default configurations:
 ---
 
@@ -28,9 +30,9 @@ Apt mirror site: **Tsinghua University TUNA Association's mirror site** (China)
 
 SSH: **enable** (on port 22)
 
-Expand rootfs: **enable** (at the first boot)
-
 raspi-config: **enable** (by command `raspi-config`)
+
+Expand rootfs: **disable** (you can expand rootfs in raspi-config manually.)
 
 Desktop environment: **disable** 
 
@@ -48,6 +50,6 @@ If it workd on the system not listed here, please open an issue and tell me.
 
 Notice: debootstrap is also using Tsinghua University TUNA Association's mirror site. 
 
-You can edit `./build.sh` if you want to change it.
+You can edit `./scripts/rootfs.sh` if you want to change it.
 
 It's a value on the top of the file, easy to find.

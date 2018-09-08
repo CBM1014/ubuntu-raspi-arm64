@@ -1,6 +1,11 @@
+mirrorsite=http://mirrors.tuna.tsinghua.edu.cn/ubuntu-ports/
+if [ `id -u` -ne 0 ];then
+    echo "Please run this script with 'sudo' or by root user."
+    exit 1
+fi
 if test -z "$whereisme"
 then
-  echo "Found null path value. please fix the path value before running this script. See ./README.md and ./scripts/readme.md for more infomation."
+  echo "Found null path value. please fix the path value before running this script. Check ./README.md and ./scripts/readme.md to get more infomation."
   exit 1
 fi
 echo "Building root file system..."

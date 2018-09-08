@@ -1,6 +1,10 @@
+if [ `id -u` -ne 0 ];then
+    echo "Please run this script with 'sudo' or by root user."
+    exit 1
+fi
 if test -z "$whereisme"
 then
-  echo "Found null path value. please fix the path value before running this script. See ./README.md and ./scripts/readme.md for more infomation."
+  echo "Found null path value. please fix the path value before running this script. Check ./README.md and ./scripts/readme.md to get more infomation."
   exit 1
 fi
 echo "Installing qemu, debootstrap and gcc..."
@@ -15,6 +19,7 @@ if [ ! -d "$works" ]; then
 fi
 if [ ! -d "$linux" ]; then
   git clone -b rpi-4.14.y --depth 1 https://github.com/raspberrypi/linux.git
+  mv $whereisme/linux $works
 else
   cd $works/linux
   git pull
@@ -22,16 +27,19 @@ else
 fi
 if [ ! -d "$firmware" ]; then
   git clone -b master --depth 1 https://github.com/raspberrypi/firmware.git
+  mv $whereisme/firmware $works
 else
   cd $works/firmware
   git pull
   cd ..
 fi
 if [ ! -d "$firmware_nonfree" ]; then
-  git clone -depth 1 https://github.com/rpi-distro/firmware-nonfree.git
+  git clone --depth 1 https://github.com/rpi-distro/firmware-nonfree.git
+  mv $whereisme/firmware-nonfree $works
 else
-  cd $works/firmwae-nonfree
+  cd $works/firmware-nonfree
   git pull
   cd ..
 fi
 echo "I'v prepared all the things we need. Let's do it!"
+

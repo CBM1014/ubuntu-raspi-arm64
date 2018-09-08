@@ -1,13 +1,20 @@
+if [ `id -u` -ne 0 ];then
+    echo "Please run this script with 'sudo' or by root user."
+    exit 1
+fi
 if test -z "$whereisme"
 then
-  echo "Found null path value. please fix the path value before running this script. See ./README.md and ./scripts/readme.md for more infomation."
+  echo "Found null path value. please fix the path value before running this script. Check ./README.md and ./scripts/readme.md to get more infomation."
   exit 1
 fi
-echo "Installing rootfs resizing script..."
-cat $whereisme/resources/init_resize >> $whereisme/rootfs/root/init_resize.sh
-cat $whereisme/resources/cmdline.txt >> $whereisme/boot/cmdline.txt
 echo "Cleaning..."
 sync
 umount $whereisme/rootfs
 umount $whereisme/boot
-kpartx -dv $whereisme/image
+losetup -d /dev/loop6
+losetup -d /dev/loop7
+rm -rvf $whereisme/rootfs
+rm -rvf $whereisme/boot
+rm -f $whereisme/ubuntu-18.04-raspberrypi-arm64.img
+mv -v $whereisme/image $whereisme/ubuntu-18.04-raspberrypi-arm64.img
+sync
