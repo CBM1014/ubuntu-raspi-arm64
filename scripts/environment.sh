@@ -22,6 +22,7 @@ if [ ! -d "$linux" ]; then
   mv $whereisme/linux $works
 else
   cd $works/linux
+  echo "Updating linux kernel source code..."
   git pull
   cd ..
 fi
@@ -30,6 +31,7 @@ if [ ! -d "$firmware" ]; then
   mv $whereisme/firmware $works
 else
   cd $works/firmware
+  echo "Updating bootcode..."
   git pull
   cd ..
 fi
@@ -38,6 +40,7 @@ if [ ! -d "$firmware_nonfree" ]; then
   mv $whereisme/firmware-nonfree $works
 else
   cd $works/firmware-nonfree
+  echo "Updating firmwares..."
   git pull
   cd ..
 fi

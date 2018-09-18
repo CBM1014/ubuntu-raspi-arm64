@@ -10,7 +10,7 @@ fi
 echo "Cleaning..."
 sync
 umount $whereisme/rootfs
-umount $whereisme/boot
+umount $whereisme/rootfs/boot
 losetup -d /dev/loop6
 losetup -d /dev/loop7
 rm -rvf $whereisme/rootfs

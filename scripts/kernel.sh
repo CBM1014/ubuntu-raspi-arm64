@@ -16,7 +16,7 @@ make ARCH=arm64 CROSS_COMPILE=aarch64-linux-gnu- INSTALL_HDR_PATH=$whereisme/roo
 cd $whereisme
 rm $whereisme/rootfs/boot/*kernel*
 rm $whereisme/rootfs/boot/*.dtb
-cp -v $whereisme/works/linux/arch/arm64/boot/Image $whereisme/boot/kernel8.img
-cp -v $whereisme/works/linux/arch/arm64/boot/dts/broadcom/*.dtb $whereieme/boot
+cp -v $whereisme/works/linux/arch/arm64/boot/Image $whereisme/rootfs/boot/kernel8.img
+cp -v $whereisme/works/linux/arch/arm64/boot/dts/broadcom/*.dtb $whereisme/rootfs/boot/
 touch $whereisme/rootfs/boot/config.txt
 echo "kernel=kernel8.img" >> $whereisme/rootfs/boot/config.txt
