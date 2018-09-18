@@ -16,6 +16,9 @@ touch $whereisme/rootfs/etc/apt/sources.list
 cat  $whereisme/resources/sources.list >> $whereisme/rootfs/etc/apt/sources.list
 chroot $whereisme/rootfs apt-get update
 chroot $whereisme/rootfs apt-get install raspi-config bash-completion resolvconf net-tools ethtool wireless-tools
+cd $whereisme/rootfs
+wget "https://archive.raspberrypi.org/debian/pool/main/f/firmware-nonfree/firmware-brcm80211_20161130-3+rpi2_all.deb"
+chroot $whereisme/rootfs dpkg -i firmware-brcm80211_20161130-3+rpi2_all.deb
 touch $whereisme/rootfs/etc/hostname
 echo "raspberrypi" >> $whereisme/rootfs/etc/hostname
 touch $whereisme/rootfs/etc/hosts

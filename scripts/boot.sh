@@ -8,9 +8,12 @@ then
   exit 1
 fi
 echo "Building boot partition... It's a important part of the system. It will be completed quickly."
+cd $whereisme
 cp -rv $whereisme/works/firmware/boot/* $whereisme/boot
-rm -rf $whereisme/boot/.git
+rm -rf $whereisme/rootfs/boot/.git
 mkdir $whereisme/rootfs/lib
-cp -rf $whereisme/works/firmware-nonfree/* $whereisme/rootfs/lib
-rm -rf $whereisme/rootfs/lib/.git
+cp -rv $whereisme/works/firmware-nonfree $whereisme/rootfs/lib
+rm -rf $whereisme/rootfs/lib/firmware-nonfree/.git
+mv -v $whereisme/rootfs/lib/firmware-nonfree $whereisme/rootfs/lib/firmware
+
 

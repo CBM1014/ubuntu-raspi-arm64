@@ -31,11 +31,10 @@ mkfs.vfat /dev/loop6
 echo "Making ext4 file system for rootfs partition..."
 mkfs.ext4 /dev/loop7
 echo "Mounting the image..."
-rm -rf $whereisme/boot
 rm -rf $whereisme/rootfs
-mkdir $whereisme/boot
 mkdir $whereisme/rootfs
-mount /dev/loop6 $whereisme/boot
+mkdir $whereisme/rootfs/boot
+mount /dev/loop6 $whereisme/rootfs/boot
 mount /dev/loop7 $whereisme/rootfs
 
 
